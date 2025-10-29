@@ -4,7 +4,11 @@ module.exports = [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['http://localhost:5173', 'https://www.unienergia.pe'], // ⚠️ tu dominio o puerto de React
+      origin: [
+        'https://panel.unienergia.pe',      // dominio del backend (Strapi)
+        'https://www.unienergia.pe',        // dominio del frontend (React)
+        'http://localhost:5173'             // para desarrollo local
+      ],
     },
   },
   'strapi::security',
