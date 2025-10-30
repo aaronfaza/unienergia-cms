@@ -1,7 +1,6 @@
 module.exports = ({ env }) => ({
-  host: '0.0.0.0',  // Permite conexiones externas
-  port: env.int('PORT', 1337),
-  url: 'https://panel.unienergia.pe', // Tu dominio
-  proxy: true,
+  host: env('HOST', '0.0.0.0'),
+  port: env.int('PORT', 1340),
+  app: { keys: env.array('APP_KEYS') },
+  url: env('PUBLIC_URL', 'https://panel.unienergia.pe'),
 });
-

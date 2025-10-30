@@ -3,12 +3,13 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
       origin: [
-        'https://panel.unienergia.pe',      // dominio del backend (Strapi)
-        'https://www.unienergia.pe',        // dominio del frontend (React)
-        'http://localhost:5173'             // para desarrollo local
+        'https://www.unienergia.pe',
+        'https://panel.unienergia.pe',
+        'http://localhost:5173'
       ],
+      headers: '*',
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     },
   },
   'strapi::security',
